@@ -1,8 +1,8 @@
 package pl.pawel.document.repos;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 import pl.pawel.document.entities.Document;
 
-public interface DocumentRepository extends CrudRepository<Document, Long> {
+public interface DocumentRepository extends JpaRepository<Document, Long> {
 
 }

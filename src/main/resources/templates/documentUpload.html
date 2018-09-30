@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Document Upload</title>
@@ -14,6 +14,19 @@
         <input type="submit" name="submit" value="Upload">
         </pre>
     </form>
+
+    <table>
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>link</th>
+        </tr>
+        <tr th:each="document : ${documents}">
+            <td th:text="${document.id}">id..</td>
+            <td th:text="${document.name}">name..</td>
+            <td><a th:href="@{download(id=__${document.id}__)}">download.</a></td>
+        </tr>
+    </table>
 
 </body>
 </html>
